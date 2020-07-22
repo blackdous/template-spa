@@ -14,6 +14,7 @@ const threadLoader = require('thread-loader');
 const isProd = process.env.NODE_ENV === 'production';
 // 常用工具方法
 const utils = require('./utils');
+const webpack = require('webpack');
 
 threadLoader.warmup(
   {
@@ -130,6 +131,7 @@ module.exports = {
         ignore: ['.*']
       }
     ]),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // make sure to include the plugin for the magic
     // 配合vue-loader使用
     new VueLoaderPlugin(),

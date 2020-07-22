@@ -2,8 +2,8 @@
  * @Descripttion: prodocution.config
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
- * @LastEditors: all
- * @LastEditTime: 2020-07-17 11:37:22
+ * @LastEditors: blackdous
+ * @LastEditTime: 2020-07-22 16:57:27
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -135,7 +135,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           //第三方依赖
           priority: 1, //设置优先级，首先抽离第三方模块
           name: 'vendor',
-          test: /node_modules/,
+          test: /(vue|vue-router|vuex)/,
           chunks: 'initial',
           minSize: 0,
           minChunks: 1 //最少引入了1次
@@ -143,10 +143,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         //缓存组
         common: {
           //公共模块
-          chunks: 'initial',
+          chunks: 'all',
           name: 'common',
           minSize: 100, //大小超过100个字节
-          minChunks: 3 //最少引入了3次
+          minChunks: 2 //最少引入了3次
         }
       }
     },

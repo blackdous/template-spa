@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: asyncnode
  * @Date: 2020-04-21 09:16:13
- * @LastEditors: asyncnode
- * @LastEditTime: 2020-05-21 10:19:53
+ * @LastEditors: blackdous
+ * @LastEditTime: 2020-07-22 16:58:20
  */
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        modules: false,
+        modules: false, // 开启terr-shaking
         useBuiltIns: 'usage',
         targets: {
           chrome: '58'

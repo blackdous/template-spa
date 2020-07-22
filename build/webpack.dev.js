@@ -2,8 +2,8 @@
  * @Descripttion: dev.js local webpack options
  * @Author: all
  * @Date: 2020-03-23 12:08:30
- * @LastEditors: all
- * @LastEditTime: 2020-07-17 08:31:13
+ * @LastEditors: blackdous
+ * @LastEditTime: 2020-07-22 17:41:30
  */
 
 // node内置path 模块
@@ -59,6 +59,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       })
     )
   },
+  stats: 'errors-only',
   // 配置 js source-map
   devtool: config.dev.devtool,
   // 配置devserver

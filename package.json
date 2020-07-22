@@ -52,9 +52,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'husky' && npm run lint",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "echo 提交代码前需要先进行单元测试 && npm run test-c"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,scss}": [
+        "eslint --fix",
+        "git add"
+      ]
     }
   },
   "devDependencies": {
@@ -97,6 +105,7 @@
     "koa-static": "^5.0.0",
     "less": "^3.12.0",
     "less-loader": "^6.2.0",
+    "lint-staged": "^10.2.11",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
