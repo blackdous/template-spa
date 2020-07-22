@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.1 (2020-07-22)
+
+
+### Features
+
+* v 0.1.0 ([25371b0](https://github.com/Braveheartforyou/vue-teamplete/commit/25371b03f2beab2f071511d23b660bfa1ef8382c))
+
 ## 0.1.0 (2020-07-17)
 
 
