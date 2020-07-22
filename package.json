@@ -1,0 +1,140 @@
+{
+  "name": "vue-teamplete",
+  "version": "0.1.0",
+  "description": "vue-teamplete",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-c": "jest --coverage",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.js",
+    "start": "cross-env npm run build && cross-env node build/webpack.start.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
+    "analyzer": "cross-env NODE_ENV=production webpack --config ./build/webpack.analyzer.js",
+    "release": "standard-version",
+    "lint": "eslint --ext .js --ext .vue src",
+    "lint-fix": "eslint --fix --ext .js --ext .vue src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Braveheartforyou/vue-teamplete.git"
+  },
+  "keywords": [
+    "vue",
+    "webpack",
+    "teamplete",
+    "ssr",
+    "sap",
+    "multipage"
+  ],
+  "author": "Braveheartforyou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Braveheartforyou/vue-teamplete/issues"
+  },
+  "homepage": "https://github.com/Braveheartforyou/vue-teamplete#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^4.2.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "thread-loader": "^2.1.3",
+    "vue": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2",
+    "workbox-webpack-plugin": "^5.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'husky' && npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "echo 提交代码前需要先进行单元测试 && npm run test-c"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-angular": "^9.1.1",
+    "@vue/test-utils": "^1.0.0-beta.33",
+    "autoprefixer": "^9.6.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.4.0",
+    "babel-loader": "^8.0.6",
+    "cache-loader": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "commitizen": "^4.1.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue-libs": "^4.0.0",
+    "glob": "^7.1.6",
+    "happypack": "^5.0.1",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "husky": "^2.7.0",
+    "image-webpack-loader": "^6.0.0",
+    "jest": "^25.4.0",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
+    "koa": "^2.13.0",
+    "koa-router": "^9.1.0",
+    "koa-static": "^5.0.0",
+    "less": "^3.12.0",
+    "less-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "purgecss-webpack-plugin": "^2.3.0",
+    "sass-loader": "^8.0.0",
+    "sass-resources-loader": "^2.0.3",
+    "speed-measure-webpack-plugin": "^1.3.3",
+    "standard-version": "^8.0.2",
+    "style-loader": "^1.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "terser-webpack-plugin": "^3.0.6",
+    "url-loader": "^2.1.0",
+    "vue-jest": "^3.0.5",
+    "vue-loader": "^15.7.1",
+    "vue-router": "^3.3.4",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "vue-test-utils": "^1.0.0-beta.11",
+    "vuex": "^3.5.1",
+    "webpack-bundle-analyzer": "^3.8.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
