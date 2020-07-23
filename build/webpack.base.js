@@ -67,6 +67,7 @@ module.exports = {
         exclude: /node_modules/,
         use: isProd
           ? [
+              'cache-loader',
               'babel-loader',
               {
                 loader: 'ts-loader',
