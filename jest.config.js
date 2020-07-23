@@ -2,8 +2,8 @@
  * @Descripttion: jest config
  * @Author: asyncnode
  * @Date: 2020-04-23 09:35:18
- * @LastEditors: all
- * @LastEditTime: 2020-07-17 18:05:11
+ * @LastEditors: blackdous
+ * @LastEditTime: 2020-07-23 09:39:24
  */
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
   testMatch: [
     'src/**/*.{js,ts,vue}',
     '!src/components/**/*.{js,ts}',
-    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
+    '**/tests/**/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
   ],
   testURL: 'http://localhost/',
   collectCoverage: true,

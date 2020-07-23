@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: blackdous
- * @LastEditTime: 2020-07-22 16:57:27
+ * @LastEditTime: 2020-07-23 10:01:06
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -136,7 +136,7 @@ const webpackConfig = merge(baseWebpackConfig, {
           priority: 1, //设置优先级，首先抽离第三方模块
           name: 'vendor',
           test: /(vue|vue-router|vuex)/,
-          chunks: 'initial',
+          chunks: 'all',
           minSize: 0,
           minChunks: 1 //最少引入了1次
         },
@@ -183,14 +183,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CleanWebpackPlugin(),
     // new HardSourceWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash:8].css'),
-      chunkFilename: utils.assetsPath('css/[name].[contenthash:8].css')
+      filename: utils.assetsPath('css/style.[contenthash:8].css'),
+      chunkFilename: utils.assetsPath('css/style.[contenthash:8].css')
     }),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano')
     }),
-    // 坑太多了
+    // 坑太多了 css tree-shaking
     // new PurgecssPlugin({
     //   paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
     //   // content: [`./public/**/*.html`, `./src/**/*.vue`],

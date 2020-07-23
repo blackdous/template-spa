@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: asyncnode
  * @Date: 2020-05-19 11:52:24
- * @LastEditors: asyncnode
- * @LastEditTime: 2020-05-24 23:30:47
+ * @LastEditors: blackdous
+ * @LastEditTime: 2020-07-23 09:08:37
  */
 
 import { shallowMount, localVue, mount } from '@vue/test-utils';
