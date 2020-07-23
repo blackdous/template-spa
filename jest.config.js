@@ -2,18 +2,19 @@
  * @Descripttion: jest config
  * @Author: asyncnode
  * @Date: 2020-04-23 09:35:18
- * @LastEditors: blackdous
- * @LastEditTime: 2020-07-23 09:39:24
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-24 00:03:31
  */
 
 module.exports = {
-  moduleFileExtensions: ['js', 'jsx', 'json', 'vue'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'vue'],
   // rootDir: path.resolve(__dirname),
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest'
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',

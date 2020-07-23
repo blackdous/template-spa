@@ -2,23 +2,26 @@
  * @Descripttion: 文档
  * @Author: asyncnode
  * @Date: 2020-05-13 10:37:47
- * @LastEditors: all
- * @LastEditTime: 2020-07-17 10:23:21
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-24 00:00:37
 -->
 <template>
   <div id="app">
     <hpRadioEx></hpRadioEx>
     <hpBreadcrumbEx></hpBreadcrumbEx>
+    <Home></Home>
   </div>
 </template>
 <script>
 import hpRadioEx from '@examples/components/radio';
 import hpBreadcrumbEx from '@examples/components/breadcrumb';
+import Home from './pages/Home';
 export default {
   name: 'App',
   components: {
     hpRadioEx,
-    hpBreadcrumbEx
+    hpBreadcrumbEx,
+    Home
   }
 };
 </script>

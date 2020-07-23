@@ -17,6 +17,7 @@ const utils = require('./utils');
 const webpack = require('webpack');
 // 获取cssloader
 const tsloader = require('./loaders/tsloader');
+console.log('tsloader: ', tsloader);
 
 threadLoader.warmup(
   {
@@ -47,7 +48,7 @@ module.exports = {
   // https://webpack.docschina.org/configuration/resolve/#resolve
   resolve: {
     // 自动解析确定的扩展
-    extensions: ['.js', '.vue', '.json', '.ts'],
+    extensions: ['.js', '.vue', '.json', '.ts', '.tsx'],
     // 路径别名
     alias: {
       // 引入vue-conplier
@@ -61,6 +62,33 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: isProd
+          ? [
+              'thread-loader',
+              'cache-loader',
+              'babel-loader',
+              {
+                loader: 'ts-loader',
+                options: {
+                  appendTsSuffixTo: [/\.vue$/],
+                  appendTsxSuffixTo: [/\.vue$/]
+                }
+              }
+            ]
+          : [
+              'babel-loader',
+              {
+                loader: 'ts-loader',
+                options: {
+                  appendTsSuffixTo: [/\.vue$/],
+                  appendTsxSuffixTo: [/\.vue$/]
+                }
+              }
+            ]
+      },
       // vue-loader
       {
         test: /\.vue$/,
@@ -121,7 +149,7 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader'
       }
-    ].concat(tsloader)
+    ]
   },
   plugins: [
     new ProgressBarPlugin(),
