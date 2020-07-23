@@ -1,6 +1,6 @@
 {
   "name": "vue-teamplete",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "vue-teamplete",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "start": "cross-env npm run build && cross-env node build/webpack.start.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
     "analyzer": "cross-env NODE_ENV=production webpack --config ./build/webpack.analyzer.js",
-    "release": "standard-version",
+    "release": "npm run build && npm run smoke && standard-version",
     "lint": "eslint --ext .js --ext .vue src",
     "lint-fix": "eslint --fix --ext .js --ext .vue src"
   },
@@ -55,7 +55,7 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "echo 提交代码前需要先进行单元测试 && npm run test-c"
+      "pre-push": "echo 提交代码前需要先进行单元测试 && npm run test"
     }
   },
   "lint-staged": {
