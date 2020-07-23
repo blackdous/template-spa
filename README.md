@@ -19,12 +19,14 @@ TODOLIST:
 - mock 功能 ❌
 - router 规划 ❌
 - vuex 规划 ❌
-- smoke 冒烟测试 ❌
+- smoke 冒烟测试 ✅
 - 单元测试 jest ✅
   - npm run test or yarn test 执行单元测试 ✅
   - npm run test-c or yarn test-c 执行单元测试、并且显示测试覆盖率 ✅
 - 支持 typescript ❌
 - 优化打包速度 terserPulgin/hardsourcewebpackpulgin、cache-lodaer、thread-lodaer/happypack 等等优化 ✅
 - 添加 Etag、Gzip✅、serverworker ❌
-- 部署为 npm 包，支持命令行交互 ❌
+- 部署为 npm 包，支持命令行交互 完成 vue-template-cli ✅
+  - npm i vue-template-cli -g ✅
+  - vuetemplate init templateName projectName ✅
 - 定制自己的 loader、plugin，如懒加载 vuex state 中的数据、router 动态注册 ❌

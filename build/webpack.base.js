@@ -15,6 +15,8 @@ const isProd = process.env.NODE_ENV === 'production';
 // 常用工具方法
 const utils = require('./utils');
 const webpack = require('webpack');
+// 获取cssloader
+const tsloader = require('./loaders/tsloader');
 
 threadLoader.warmup(
   {
@@ -119,7 +121,7 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader'
       }
-    ]
+    ].concat(tsloader)
   },
   plugins: [
     new ProgressBarPlugin(),

@@ -2,43 +2,43 @@
  * @Descripttion: prodocution.config
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
- * @LastEditors: blackdous
- * @LastEditTime: 2020-07-23 10:01:06
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-23 16:56:38
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
 // node内置path 模块
-const path = require('path');
-const glob = require('glob');
+const path = require('path')
+const glob = require('glob')
 // webpack config合并模块
-const merge = require('webpack-merge');
+const merge = require('webpack-merge')
 // copy静态文件插件
 // const CopyWebpackPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // 友好报错插件模块
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 // 清除文件
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // https://webpack.docschina.org/plugins/terser-webpack-plugin/
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 // 基础配置
-const baseWebpackConfig = require('./webpack.base');
+const baseWebpackConfig = require('./webpack.base')
 // 全局配置
-const config = require('../config');
+const config = require('../config')
 // PWA
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin')
 // 获取cssloader
-const cssLoader = require('./loaders/cssLoader');
+const cssLoader = require('./loaders/cssLoader')
 
 // tree-sheaking css
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 // 常用工具方法
-const utils = require('./utils');
+const utils = require('./utils')
 // 硬盘缓存
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 // 多进程加速
-const HappyPack = require('happypack');
+const HappyPack = require('happypack')
 
 // const PATHS = {
 //   src: path.join(__dirname, 'src')
@@ -166,6 +166,42 @@ const webpackConfig = merge(baseWebpackConfig, {
   optimization: {
     minimizer: [
       new TerserPlugin({
+        terserOptions: {
+          compress: {
+            // turn off flags with small gains to speed up minification
+            arrows: false,
+            collapse_vars: false, // 0.3kb
+            comparisons: false,
+            computed_props: false,
+            hoist_funs: false,
+            hoist_props: false,
+            hoist_vars: false,
+            inline: false,
+            loops: false,
+            negate_iife: false,
+            properties: false,
+            reduce_funcs: false,
+            reduce_vars: false,
+            switches: false,
+            toplevel: false,
+            typeofs: false,
+
+            // a few flags with noticable gains/speed ratio
+            // numbers based on out of the box vendor bundle
+            booleans: true, // 0.7kb
+            if_return: true, // 0.4kb
+            sequences: true, // 0.7kb
+            unused: true, // 2.3kb
+
+            // required features to drop conditional branches
+            conditionals: true,
+            dead_code: true,
+            evaluate: true
+          },
+          mangle: {
+            safari10: true
+          }
+        },
         parallel: true,
         cache: true,
         terserOptions: {
@@ -207,16 +243,16 @@ const webpackConfig = merge(baseWebpackConfig, {
           stats.compilation.errors.length &&
           process.argv.indexOf('--watch') == -1
         ) {
-          console.log('build error');
-          process.exit(1);
+          console.log('build error')
+          process.exit(1)
         }
-      });
+      })
     }
     // new HappyPack({
     //   loaders: ['babel-loader?cacheDirectory=true']
     // }),
     // new HardSourceWebpackPlugin()
   ]
-});
+})
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

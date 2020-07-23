@@ -2,8 +2,8 @@
  * @Descripttion: commitlint 配置文件
  * @Author: all
  * @Date: 2020-07-17 17:00:40
- * @LastEditors: all
- * @LastEditTime: 2020-07-17 17:04:24
+ * @LastEditors: blackdous
+ * @LastEditTime: 2020-07-23 10:26:07
  */
 
 module.exports = {
@@ -14,7 +14,18 @@ module.exports = {
     'type-enum': [
       2,
       'always',
-      ['upd', 'feat', 'fix', 'refactor', 'docs', 'chore', 'style', 'revert']
+      [
+        'feat',
+        'fix',
+        'docs',
+        'style',
+        'build',
+        'ci',
+        'chore',
+        'revert',
+        'test',
+        'refactor'
+      ]
     ],
     'header-max-length': [0, 'always', 72]
   }

@@ -11,8 +11,7 @@
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
     "analyzer": "cross-env NODE_ENV=production webpack --config ./build/webpack.analyzer.js",
     "release": "npm run build && npm run smoke && standard-version",
-    "lint": "eslint --ext .js --ext .vue src",
-    "lint-fix": "eslint --fix --ext .js --ext .vue src"
+    "lint": "eslint --ext .js --ext .vue src"
   },
   "repository": {
     "type": "git",
@@ -63,6 +62,11 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -139,10 +143,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  ]
 }
