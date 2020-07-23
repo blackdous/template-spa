@@ -17,7 +17,7 @@ const utils = require('./utils');
 const webpack = require('webpack');
 // 获取cssloader
 const tsloader = require('./loaders/tsloader');
-console.log('tsloader: ', tsloader);
+// console.log('tsloader: ', tsloader);
 
 threadLoader.warmup(
   {
@@ -67,8 +67,6 @@ module.exports = {
         exclude: /node_modules/,
         use: isProd
           ? [
-              'thread-loader',
-              'cache-loader',
               'babel-loader',
               {
                 loader: 'ts-loader',
