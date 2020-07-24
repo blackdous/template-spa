@@ -22,7 +22,6 @@ TODOLIST:
 - smoke 冒烟测试 ✅
 - 单元测试 jest ✅
   - npm run test or yarn test 执行单元测试 ✅
-  - npm run test-c or yarn test-c 执行单元测试、并且显示测试覆盖率 ✅
 - 支持 typescript ❌
 - 优化打包速度 terserPulgin/hardsourcewebpackpulgin、cache-lodaer、thread-lodaer/happypack 等等优化 ✅
 - 添加 Etag、Gzip✅、serverworker ❌

@@ -3,24 +3,42 @@
  * @Author: heidous
  * @Date: 2020-07-23 23:48:12
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-23 23:48:34
+ * @LastEditTime: 2020-07-24 10:14:11
  */
-const digitsRE = /(\d{3})(?=\d)/g;
-
-export function currencyFilter(value: any, currency: any, decimals: any) {
-  value = parseFloat(value);
-  if (!isFinite(value) || (!value && value !== 0)) {
-    return '';
-  }
-  currency = currency != null ? currency : '$';
-  decimals = decimals != null ? decimals : 2;
-  const stringified = Math.abs(value).toFixed(decimals);
-  const intVal = decimals ? stringified.slice(0, -1 - decimals) : stringified;
-  const i = intVal.length % 3;
-  const head = i > 0 ? intVal.slice(0, i) + (intVal.length > 3 ? ',' : '') : '';
-  const floatVal = decimals ? stringified.slice(-1 - decimals) : '';
-  const sign = value < 0 ? '-' : '';
-  return (
-    sign + currency + head + intVal.slice(i).replace(digitsRE, '$1,') + floatVal
-  );
+interface Person {
+  name: string;
+  age: number;
 }
+class Animal {
+  name: string = 'abc';
+}
+export const testTypescript = function() {
+  const a = { num: 999 };
+  console.log(a);
+  const p: Person = {
+    name: 'abc',
+    age: 18
+  };
+  console.log(p);
+  console.log(new Animal().name);
+};
+
+// 无法编译的语法
+// 无法编译的语法
+// 无法编译的语法
+
+// namespace BBB{
+//     const name = 'abc';
+// }
+
+// const enum Sex {
+//     man,
+//     woman
+// }
+
+// let p2 = {age: 18} as Person;
+// console.log(p2.name);
+// let p3 = <Person>{age: 18};
+// console.log(p3.name);
+
+// export = p3;

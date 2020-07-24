@@ -17,6 +17,7 @@ const utils = require('./utils');
 const webpack = require('webpack');
 // 获取cssloader
 const tsloader = require('./loaders/tsloader');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 // console.log('tsloader: ', tsloader);
 
 threadLoader.warmup(
@@ -67,11 +68,13 @@ module.exports = {
         exclude: /node_modules/,
         use: isProd
           ? [
+              // 'thread-loader',
               'cache-loader',
               'babel-loader',
               {
                 loader: 'ts-loader',
                 options: {
+                  transpileOnly: true,
                   appendTsSuffixTo: [/\.vue$/],
                   appendTsxSuffixTo: [/\.vue$/]
                 }
@@ -82,6 +85,7 @@ module.exports = {
               {
                 loader: 'ts-loader',
                 options: {
+                  transpileOnly: true,
                   appendTsSuffixTo: [/\.vue$/],
                   appendTsxSuffixTo: [/\.vue$/]
                 }
@@ -91,9 +95,7 @@ module.exports = {
       // vue-loader
       {
         test: /\.vue$/,
-        use: isProd
-          ? ['thread-loader', 'cache-loader', 'vue-loader']
-          : ['vue-loader']
+        use: isProd ? ['thread-loader', 'vue-loader'] : ['vue-loader']
       },
       // 图片配置
       {
@@ -164,6 +166,11 @@ module.exports = {
     // make sure to include the plugin for the magic
     // 配合vue-loader使用
     new VueLoaderPlugin(),
+    // new ForkTsCheckerWebpackPlugin({
+    //   eslint: {
+    //     files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
+    //   }
+    // }),
     // html 插件
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),

@@ -3,17 +3,17 @@
  * @Author: blackdous
  * @Date: 2020-07-22 16:51:56
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-23 23:38:03
+ * @LastEditTime: 2020-07-24 08:38:25
  */
 
 module.exports = {
   test: /\.ts$/,
   use: [
     {
-      loader: 'thread-loader'
+      loader: 'cache-loader'
     },
     {
-      loader: 'cache-loader'
+      loader: 'thread-loader'
     },
     {
       loader: 'babel-loader'
@@ -24,4 +24,4 @@ module.exports = {
   ],
   exclude: /node_modules/,
   options: { appendTsSuffixTo: [/\.vue$/] }
-};
+}

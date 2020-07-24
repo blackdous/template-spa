@@ -64,6 +64,7 @@
   },
   "lint-staged": {
     "*.{js,scss}": [
+      "npm run lint",
       "git add"
     ]
   },
@@ -77,7 +78,6 @@
     "@commitlint/config-angular": "^9.1.1",
     "@vue/test-utils": "^1.0.0-beta.33",
     "autoprefixer": "^9.6.1",
-    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^25.4.0",
     "babel-loader": "^8.0.6",
@@ -99,6 +99,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
     "eslint-plugin-vue-libs": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^5.0.9",
     "glob": "^7.1.6",
     "happypack": "^5.0.1",
     "hard-source-webpack-plugin": "^0.13.1",
