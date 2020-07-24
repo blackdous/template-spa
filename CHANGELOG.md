@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/Braveheartforyou/vue-teamplete/compare/v0.1.2...v0.1.3) (2020-07-24)
+
+
+### Features
+
+* add typescript ([ae49934](https://github.com/Braveheartforyou/vue-teamplete/commit/ae4993439a4c3946acbbc5f11795d2f08f6ef7d8))
+* add typescript ([32c07a5](https://github.com/Braveheartforyou/vue-teamplete/commit/32c07a5d008cade9c74c52a395291081a67e0ed7))
+* update ([7a50439](https://github.com/Braveheartforyou/vue-teamplete/commit/7a50439e6270e55a15e836ae12eb301725cefb63))
+
+
+### Bug Fixes
+
+* **ts-loader cache-loader:** ts-loader cache-loader ([363afc4](https://github.com/Braveheartforyou/vue-teamplete/commit/363afc4329ae8ed9299a81d268a9eac6742189aa))
+
 ### [0.1.2](https://github.com/Braveheartforyou/vue-teamplete/compare/v0.1.1...v0.1.2) (2020-07-23)
 
 
