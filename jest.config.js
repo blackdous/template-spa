@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-04-23 09:35:18
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 00:03:31
+ * @LastEditTime: 2020-07-24 14:38:59
  */
 
 module.exports = {
@@ -36,10 +36,18 @@ module.exports = {
     '!**/dist/**',
     '!**/(test|tests|examples|config|build|coverage|static)/**',
     '!**/jest.config.js',
-    '!**/components/**/index.js',
+    '!**/commitlint.config.js',
     '!**/babel.config.js',
     '!**/src/main.js',
     '!**/src/App.vue',
     '!**/postcss.config.js'
-  ]
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 50,
+      functions: 50,
+      lines: 50,
+      statements: 50
+    }
+  }
 };

@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-07-23 23:48:12
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 10:14:11
+ * @LastEditTime: 2020-07-24 14:11:46
  */
 interface Person {
   name: string;
@@ -21,6 +21,10 @@ export const testTypescript = function() {
   };
   console.log(p);
   console.log(new Animal().name);
+};
+
+export const testJest = function(firstName: string, lastName: string) {
+  return 'firstName:' + firstName + 'lastName:' + lastName;
 };
 
 // 无法编译的语法
