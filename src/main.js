@@ -2,14 +2,15 @@
  * @Descripttion:
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-07-26 00:27:48
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-26 01:47:35
  */
 
 // import '@babel/polyfill';
 
 import Vue from 'vue';
 import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 import { testTypescript } from './currency';
 import { routes } from '@/router/route';
 import { addFunc } from './utils';
@@ -21,7 +22,7 @@ console.log('routes: ', routes);
 // testTypescript();
 testTypescript();
 const aa = addFunc(11, 22);
-console.log('aa: ', aa);
+// console.log('aa: ', aa);
 console.log('aa: ', aa);
 console.log('aa: ', aa);
 
@@ -31,3 +32,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 });
+registerServiceWorker();

@@ -1,10 +1,11 @@
 /*
- * @Descripttion: 
+ * @Descripttion:
  * @Author: all
  * @Date: 2020-03-23 12:08:30
- * @LastEditors: all
- * @LastEditTime: 2020-07-14 17:33:15
- */ 
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-26 01:45:35
+ */
+
 const path = require('path');
 
 module.exports = {
@@ -32,9 +33,9 @@ module.exports = {
     // https://webpack.js.org/configuration/devtool/#production
     devtool: 'none',
     // 是否开启Gzip
-    productionGzip: false,
+    productionGzip: true,
     productionGzipExtensions: ['js', 'css'],
     // 生成包分析
     bundleAnalyzerReport: process.env.npm_config_report
   }
-}
+};

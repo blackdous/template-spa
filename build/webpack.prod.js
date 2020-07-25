@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 11:46:04
+ * @LastEditTime: 2020-07-26 02:30:25
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -231,10 +231,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     //   paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
     //   // content: [`./public/**/*.html`, `./src/**/*.vue`],
     // }),
-    // new WorkboxPlugin.GenerateSW({
-    //   clientsClaim: true,
-    //   skipWaiting: true
-    // }),
+    new WorkboxPlugin.GenerateSW({
+      swDest: 'sw.js',
+      clientsClaim: true,
+      skipWaiting: true
+    }),
     new FriendlyErrorsPlugin(),
     function() {
       this.hooks.done.tap('done', (stats) => {
@@ -254,5 +255,20 @@ const webpackConfig = merge(baseWebpackConfig, {
     // new HardSourceWebpackPlugin()
   ]
 });
+if (config.build.productionGzip) {
+  const CompressionWebpackPlugin = require('compression-webpack-plugin');
+
+  webpackConfig.plugins.push(
+    new CompressionWebpackPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: new RegExp(
+        '\\.(' + config.build.productionGzipExtensions.join('|') + ')$'
+      ),
+      threshold: 10240,
+      minRatio: 0.8
+    })
+  );
+}
 
 module.exports = webpackConfig;
