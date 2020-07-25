@@ -2,8 +2,8 @@
  * @Descripttion: dev.js local webpack options
  * @Author: all
  * @Date: 2020-03-23 12:08:30
- * @LastEditors: blackdous
- * @LastEditTime: 2020-07-22 17:41:30
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-07-26 00:24:40
  */
 
 // node内置path 模块
@@ -70,9 +70,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     clientLogLevel: 'warning',
     // 启用 webpack 的 模块热替换 功能：
     hot: true,
-    hotOnly: true,
+    // hotOnly: true,
     // contentBase: './dist', // since we use CopyWebpackPlugin.
-    contentBase: false, // since we use CopyWebpackPlugin.
+    // contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,

@@ -153,6 +153,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new ProgressBarPlugin(),
     // copy custom static assets
     new CopyWebpackPlugin([
@@ -165,12 +166,11 @@ module.exports = {
     new webpack.optimize.ModuleConcatenationPlugin(),
     // make sure to include the plugin for the magic
     // 配合vue-loader使用
-    new VueLoaderPlugin(),
-    // new ForkTsCheckerWebpackPlugin({
-    //   eslint: {
-    //     files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
-    //   }
-    // }),
+    new ForkTsCheckerWebpackPlugin({
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
+      }
+    }),
     // html 插件
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "smoke": "jest --collectCoverage=false ./tests/smoke/*.spec.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js",
+    "dev2": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.js",
     "start": "cross-env npm run build && cross-env node build/webpack.start.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
     "analyzer": "cross-env NODE_ENV=production webpack --config ./build/webpack.analyzer.js",
@@ -49,9 +50,9 @@
     "tslint": "^6.1.2",
     "typescript": "^3.9.7",
     "vue": "^2.6.10",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.0",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2",
     "workbox-webpack-plugin": "^5.1.1"
   },
