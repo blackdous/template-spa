@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-26 02:30:25
+ * @LastEditTime: 2020-07-27 09:43:29
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -231,10 +231,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     //   paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
     //   // content: [`./public/**/*.html`, `./src/**/*.vue`],
     // }),
+    // https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW
     new WorkboxPlugin.GenerateSW({
-      swDest: 'sw.js',
+      // swDest: 'sw.js',
+      cacheId: 'template-sap-cacheId',
       clientsClaim: true,
-      skipWaiting: true
+      skipWaiting: true,
+      sourcemap: false
     }),
     new FriendlyErrorsPlugin(),
     function() {
@@ -256,8 +259,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   ]
 });
 if (config.build.productionGzip) {
+  // gzip配置
   const CompressionWebpackPlugin = require('compression-webpack-plugin');
-
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
       filename: '[path].gz[query]',

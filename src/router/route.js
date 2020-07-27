@@ -3,11 +3,11 @@
  * @Author: heidous
  * @Date: 2020-07-24 14:51:09
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 18:00:39
+ * @LastEditTime: 2020-07-27 15:28:18
  */
 export const routes = require.context('../pages', true, /\.vue$/);
+console.log('routes: ', routes.keys());
 const requireAll = (context) => context.keys().map(context);
 requireAll(routes).forEach((route) => {
   console.log(route);
 });
-console.log('routes: ', routes.keys());

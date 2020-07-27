@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-26 01:47:35
+ * @LastEditTime: 2020-07-27 15:22:21
  */
 
 // import '@babel/polyfill';
@@ -24,7 +24,7 @@ testTypescript();
 const aa = addFunc(11, 22);
 // console.log('aa: ', aa);
 console.log('aa: ', aa);
-console.log('aa: ', aa);
+// console.log('aa: ', aa);
 
 // eslint-disable-next-line no-new
 new Vue({
