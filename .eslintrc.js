@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 00:15:37
+ * @LastEditTime: 2020-07-28 16:55:19
  */
 
 // https://eslint.org/docs/user-guide/configuring
@@ -30,11 +30,12 @@ module.exports = {
   plugins: ['vue'],
   // add your custom rules here
   rules: {
+    'vue/name-property-casing': ['error', 'PascalCase'],
     'vue/max-attributes-per-line': [
       1,
       {
         //多个特性的元素应该分多行撰写，每个特性一行
-        singleline: 10,
+        singleline: 20,
         multiline: {
           max: 1,
           allowFirstLine: false
@@ -46,7 +47,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     //
-    semi: ['error', 'always'],
+    semi: ['warn', 'always'],
     'space-before-function-paren': 0,
     camelcase: 0,
     // allow debugger during development

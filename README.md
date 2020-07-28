@@ -18,13 +18,13 @@ TODOLIST:
 - eslint、husky、pre-commit 代码检测 ✅
 - mock 功能 ❌
 - router 规划 ❌
-- vuex 基础封装 ❌
+- vuex 基础封装 ✅
 - smoke 冒烟测试 ✅
 - 单元测试 jest ✅
   - npm run test or yarn test 执行单元测试 ✅
 - 支持 typescript (ts-loader、tslint、ts-jest、fork-ts-checker-webpack-plugin) ✅
 - 优化打包速度 terserPulgin/hardsourcewebpackpulgin、cache-lodaer、thread-lodaer/happypack 等等优化 ✅
-- 添加 Etag、Gzip✅、serverworker ✅
+- 添加 Etag、Gzip、serverworker ✅
 - 部署为 npm 包，支持命令行交互 完成 vue-template-cli ✅
   - npm i vue-template-cli -g ✅
   - vuetemplate init templateName projectName ✅

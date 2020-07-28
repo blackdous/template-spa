@@ -2,8 +2,8 @@
  * @Descripttion:
  * @Author: asyncnode
  * @Date: 2020-05-13 10:37:47
- * @LastEditors: asyncnode
- * @LastEditTime: 2020-05-25 11:54:33
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-28 15:31:07
 -->
 <template>
   <div>
@@ -61,7 +61,7 @@
 import HpRadio from '@com/radio/radio';
 import HpRadioGroup from '@com/radio/radio-group';
 export default {
-  name: 'hpRadioEx',
+  name: 'HpRadioEx',
   components: {
     HpRadio,
     HpRadioGroup

@@ -1,9 +1,9 @@
 /*
- * @Descripttion:
+ * @Descripttion: 初始化需要的state
  * @Author: heidous
  * @Date: 2020-07-27 17:38:03
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 11:47:18
+ * @LastEditTime: 2020-07-28 11:03:37
  */
 const state = {
   msg: 'hello world',
@@ -37,9 +37,13 @@ const actions = {
     }, 0);
   }
 };
+const getters = {
+  count: (state) => state.count
+};
 export default {
   namespaced: true,
   state,
   mutations,
-  actions
+  actions,
+  getters
 };

@@ -3,13 +3,13 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-27 09:43:29
+ * @LastEditTime: 2020-07-28 16:04:41
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
 // node内置path 模块
 const path = require('path');
-const glob = require('glob');
+// const glob = require('glob');
 // webpack config合并模块
 const merge = require('webpack-merge');
 // copy静态文件插件
@@ -32,13 +32,13 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const cssLoader = require('./loaders/cssLoader');
 
 // tree-sheaking css
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+// const PurgecssPlugin = require('purgecss-webpack-plugin');
 // 常用工具方法
 const utils = require('./utils');
-// 硬盘缓存
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
-// 多进程加速
-const HappyPack = require('happypack');
+// // 硬盘缓存
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+// // 多进程加速
+// const HappyPack = require('happypack');
 
 // const PATHS = {
 //   src: path.join(__dirname, 'src')

@@ -1,9 +1,9 @@
 /*
- * @Descripttion:
+ * @Descripttion: test app.js
  * @Author: heidous
  * @Date: 2020-07-27 17:38:03
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 11:47:18
+ * @LastEditTime: 2020-07-28 16:38:07
  */
 const state = {
   msg: 'hello world',

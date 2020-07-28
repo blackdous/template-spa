@@ -2,8 +2,8 @@
  * @Descripttion: hpBreadcrumbEx
  * @Author: asyncnode
  * @Date: 2020-05-24 22:40:59
- * @LastEditors: asyncnode
- * @LastEditTime: 2020-05-25 09:00:24
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-28 15:30:57
 -->
 <template>
   <div>
@@ -18,7 +18,7 @@
 import HpBreadcrumb from '@com/breadcrumb/breadcrumb';
 import HpBreadcrumbItem from '@com/breadcrumb/breadcrumb-item';
 export default {
-  name: 'hpBreadcrumbEx',
+  name: 'HpBreadcrumbEx',
   components: {
     // 面包屑
     HpBreadcrumb,
