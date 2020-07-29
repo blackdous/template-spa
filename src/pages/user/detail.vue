@@ -1,19 +1,23 @@
 <!--
  * @Descripttion:
  * @Author: heidous
- * @Date: 2020-07-27 14:22:39
+ * @Date: 2020-07-27 16:35:23
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 17:03:29
+ * @LastEditTime: 2020-07-29 10:44:51
 -->
 <template>
-  <div class="userTest">
-    userTest
+  <div class="userInfo">
+    <div>
+      userInfo---detail
+    </div>
+    <router-link to="/userinfo">userinfo</router-link>
+    <router-link to="/">home</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'UserTest',
+  name: 'UserDetail',
   components: {},
   data() {
     return {};

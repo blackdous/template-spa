@@ -17,7 +17,7 @@ TODOLIST:
 - 支持 sass、less、stylus、postcss ✅
 - eslint、husky、pre-commit 代码检测 ✅
 - mock 功能 ❌
-- router 规划 ❌
+- router 规划 ✅
 - vuex 基础封装 ✅
 - smoke 冒烟测试 ✅
 - 单元测试 jest ✅
@@ -28,4 +28,4 @@ TODOLIST:
 - 部署为 npm 包，支持命令行交互 完成 vue-template-cli ✅
   - npm i vue-template-cli -g ✅
   - vuetemplate init templateName projectName ✅
-- 定制自己的 loader、plugin，如懒加载 vuex state 中的数据、router 动态注册 ❌
+- 定制自己的 loader、plugin❌，如懒加载 vuex state 中的数据 ✅、router 动态注册 ✅

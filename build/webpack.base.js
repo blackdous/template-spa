@@ -55,6 +55,7 @@ module.exports = {
       // 引入vue-conplier
       vue$: 'vue/dist/vue.esm.js',
       '@': utils.resolve('src'),
+      '@page': utils.resolve('src/pages'),
       '@com': utils.resolve('src/components'),
       '@examples': utils.resolve('src/examples'),
       '@router': utils.resolve('src/router'),
@@ -182,7 +183,7 @@ module.exports = {
         preserveLineBreaks: true,
         minifyCSS: true,
         minifyJS: true,
-        removeComments: true
+        removeComments: !config.environment.debug
       },
       chunksSortMode: 'dependency'
     })

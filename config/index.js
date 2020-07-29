@@ -3,10 +3,11 @@
  * @Author: all
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-26 01:45:35
+ * @LastEditTime: 2020-07-29 17:57:31
  */
 
 const path = require('path');
+const environment = require('./environment');
 
 module.exports = {
   // 开发环境中的配置
@@ -33,9 +34,10 @@ module.exports = {
     // https://webpack.js.org/configuration/devtool/#production
     devtool: 'none',
     // 是否开启Gzip
-    productionGzip: true,
+    productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
     // 生成包分析
     bundleAnalyzerReport: process.env.npm_config_report
-  }
+  },
+  environment
 };

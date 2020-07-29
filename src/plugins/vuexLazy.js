@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-07-28 14:18:01
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 16:58:10
+ * @LastEditTime: 2020-07-29 10:11:08
  */
 
 const VuexStoreRegister = {
@@ -13,7 +13,6 @@ const VuexStoreRegister = {
       $modules: [],
       $isVuex: false,
       beforeCreate() {
-        console.log(111);
         // 是否自动注册Vuex 是否已经注册过 Vuex
         if (this.$options.$isVuex && !this.$options.$registerModuleFlag) {
           const $_modules = this.$options.$modules.length

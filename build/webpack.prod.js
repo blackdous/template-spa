@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 16:04:41
+ * @LastEditTime: 2020-07-29 12:00:17
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -206,10 +206,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         cache: true,
         terserOptions: {
           compress: {
-            warnings: false,
-            drop_console: true,
-            drop_debugger: true,
-            pure_funcs: ['console.log']
+            warnings: !config.environment.debug,
+            drop_console: config.environment.debug,
+            drop_debugger: config.environment.debug,
+            pure_funcs: config.environment.debug ? [] : ['console.log']
           }
         }
       })
@@ -237,7 +237,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       cacheId: 'template-sap-cacheId',
       clientsClaim: true,
       skipWaiting: true,
-      sourcemap: false
+      sourcemap: config.environment.debug
     }),
     new FriendlyErrorsPlugin(),
     function() {

@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 16:55:19
+ * @LastEditTime: 2020-07-29 09:21:56
  */
 
 // https://eslint.org/docs/user-guide/configuring
@@ -30,6 +30,7 @@ module.exports = {
   plugins: ['vue'],
   // add your custom rules here
   rules: {
+    'max-lines': ['error', 500],
     'vue/name-property-casing': ['error', 'PascalCase'],
     'vue/max-attributes-per-line': [
       1,

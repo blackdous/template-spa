@@ -3,11 +3,13 @@
  * @Author: heidous
  * @Date: 2020-07-23 23:54:09
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 00:07:28
+ * @LastEditTime: 2020-07-29 10:30:06
 -->
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <router-link to="/userinfo">userinfo</router-link>
+    <router-link to="/userdetail">userdetail</router-link>
   </div>
 </template>
 
