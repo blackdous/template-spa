@@ -3,8 +3,8 @@
  * @Descripttion: index.spec.js 冒烟测试
  * @Author: blackdous
  * @Date: 2020-07-23 08:09:23
- * @LastEditors: blackdous
- * @LastEditTime: 2020-07-23 10:13:48
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-07-30 16:44:40
  */
 
 // const webpack = require('webpack');
@@ -13,6 +13,7 @@ const path = require('path');
 const glob = require('glob-all');
 // const webpackConfig = path.join(__dirname, '../../build/webpack.prod.js');
 const distPath = path.join(__dirname, '../../dist');
+jest.setTimeout(10000);
 
 describe('smoke test', () => {
   it('html test', (done) => {
@@ -27,11 +28,12 @@ describe('smoke test', () => {
     // console.log('files: ', files);
     let stylecss = false;
     files.forEach((filePath) => {
-      if (filePath.indexOf('style') !== -1) {
+      if (filePath.indexOf('app') !== -1) {
         stylecss = true;
       }
     });
-    if (files.length === 2 && stylecss) {
+    // console.log('stylecss: ', stylecss);
+    if (files.length && stylecss) {
       done();
     }
   });

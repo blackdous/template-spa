@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-29 12:00:17
+ * @LastEditTime: 2020-07-30 17:16:50
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -26,6 +26,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base');
 // 全局配置
 const config = require('../config');
+console.log('config: ', config);
 // PWA
 const WorkboxPlugin = require('workbox-webpack-plugin');
 // 获取cssloader
@@ -154,17 +155,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       new OptimizeCSSAssetsPlugin({
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano')
-      })
-    ]
-    // minimizer: [new OptimizeCSSAssetsPlugin({
-    //   assetNameRegExp: /\.css$/g,
-    //   cssProcessor: require('cssnano')
-    // }), new TerserPlugin({
-    //   include: /\.min\.js$/
-    // })]
-  },
-  optimization: {
-    minimizer: [
+      }),
       new TerserPlugin({
         terserOptions: {
           compress: {
@@ -214,13 +205,19 @@ const webpackConfig = merge(baseWebpackConfig, {
         }
       })
     ]
+    // minimizer: [new OptimizeCSSAssetsPlugin({
+    //   assetNameRegExp: /\.css$/g,
+    //   cssProcessor: require('cssnano')
+    // }), new TerserPlugin({
+    //   include: /\.min\.js$/
+    // })]
   },
   plugins: [
     new CleanWebpackPlugin(),
     // new HardSourceWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: utils.assetsPath('css/style.[contenthash:8].css'),
-      chunkFilename: utils.assetsPath('css/style.[contenthash:8].css')
+      filename: utils.assetsPath('css/[name].[contenthash:8].css'),
+      chunkFilename: utils.assetsPath('css/[name].[contenthash:8].css')
     }),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -258,6 +255,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // new HardSourceWebpackPlugin()
   ]
 });
+console.log(webpackConfig.devtool);
 if (config.build.productionGzip) {
   // gzip配置
   const CompressionWebpackPlugin = require('compression-webpack-plugin');

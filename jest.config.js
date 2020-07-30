@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-04-23 09:35:18
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-27 18:08:57
+ * @LastEditTime: 2020-07-30 16:25:24
  */
 
 module.exports = {
@@ -39,6 +39,8 @@ module.exports = {
     '!**/commitlint.config.js',
     '!**/babel.config.js',
     '!**/src/main.js',
+    '!**/src/registerServiceWorker.js',
+    '!**/src/currency.ts',
     '!**/src/App.vue',
     '!**/postcss.config.js'
   ],

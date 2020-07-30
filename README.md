@@ -10,7 +10,7 @@ TODOLIST:
 
 - npm run dev or yarn dev 本地开发 ✅
 - npm run build or yarn build 打包配置 ✅
-  - 分环境打包 build:sit、build:uat、build:pre、build:prod 环境 ❌
+  - 分环境打包 build:sit、build:uat、build:pre、build:prod 环境 ✅
 - npm run analyzer 分析打包节点时间、打包体积 ✅
 - npm run start 运行本地打包好的文件 ✅
 - babel 7.x、webpack 4.x ✅
