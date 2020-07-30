@@ -4,7 +4,7 @@
  * @Author: blackdous
  * @Date: 2020-07-23 08:09:23
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-30 16:44:40
+ * @LastEditTime: 2020-07-30 17:27:35
  */
 
 // const webpack = require('webpack');
@@ -39,16 +39,18 @@ describe('smoke test', () => {
   });
   it('common test', (done) => {
     const files = glob.sync([`${distPath}/public/static/js/**.js`]);
+    console.log('files: ', files);
     let appjs = false;
     let vendorsjs = false;
     files.forEach((filePath) => {
       if (filePath.indexOf('app') !== -1) {
         appjs = true;
       }
-      if (filePath.indexOf('vendors') !== -1) {
+      if (filePath.indexOf('vendor') !== -1) {
         vendorsjs = true;
       }
     });
+    // console.log('appjs: ', appjs, vendorsjs);
     if (appjs && vendorsjs) {
       done();
     }
