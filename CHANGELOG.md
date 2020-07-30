@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/blackdous/template-sap/compare/v0.1.3...v0.1.4) (2020-07-30)
+
+
+### Features
+
+* add router ([1958843](https://github.com/blackdous/template-sap/commit/1958843ac8ab623ee086ee068ba067d266709fef))
+* add router ([da318b4](https://github.com/blackdous/template-sap/commit/da318b4d6f0b864522c43f69f24ef4b1dfd98780))
+* delete console ([31a573b](https://github.com/blackdous/template-sap/commit/31a573be448a9372b91e4e826b30d704a8611881))
+* environment plugin ([45c8aec](https://github.com/blackdous/template-sap/commit/45c8aec084329bb33dca5dabc2bb92d7253a7241))
+* environment plugin ([a28f7ac](https://github.com/blackdous/template-sap/commit/a28f7ac46fdf01531b9072f9d1682f6bfa6ddf11))
+* vuex update ([6ebc796](https://github.com/blackdous/template-sap/commit/6ebc796e7ff84bf86c94ca595246d7344221d8db))
+* **vuex:** vuex ([016b32d](https://github.com/blackdous/template-sap/commit/016b32d1f90b024ea11593c97c9d5023d72cf759))
+* update ([149090a](https://github.com/blackdous/template-sap/commit/149090af68024faadce8293a12e0c0c300f3dd9f))
+
+
+### Bug Fixes
+
+* add npm run build = npm run build:prod ([cce5e56](https://github.com/blackdous/template-sap/commit/cce5e56151ddfdf9cf1d9340f2c0105e057ecb60))
+* devServer => delete hotOnly ([8e40f47](https://github.com/blackdous/template-sap/commit/8e40f472264b6d293795187e41e571655f8d4b1f))
+
 ### [0.1.3](https://github.com/Braveheartforyou/vue-teamplete/compare/v0.1.2...v0.1.3) (2020-07-24)
 
 
