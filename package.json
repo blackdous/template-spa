@@ -8,6 +8,7 @@
     "smoke": "jest --collectCoverage=false ./tests/smoke/*.spec.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js",
     "start": "cross-env npm run build && cross-env node build/webpack.start.js",
+    "build": "cross-env NODE_ENV=production ENVIRONMENT=prod webpack --config ./build/webpack.prod.js",
     "build:prod": "cross-env NODE_ENV=production ENVIRONMENT=prod webpack --config ./build/webpack.prod.js",
     "build:sit": "cross-env NODE_ENV=production ENVIRONMENT=sit webpack --config ./build/webpack.prod.js",
     "build:uat": "cross-env NODE_ENV=production ENVIRONMENT=uat webpack --config ./build/webpack.prod.js",
