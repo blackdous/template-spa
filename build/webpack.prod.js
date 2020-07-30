@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-30 17:16:50
+ * @LastEditTime: 2020-07-30 17:24:59
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -26,7 +26,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base');
 // 全局配置
 const config = require('../config');
-console.log('config: ', config);
+
 // PWA
 const WorkboxPlugin = require('workbox-webpack-plugin');
 // 获取cssloader
@@ -244,7 +244,6 @@ const webpackConfig = merge(baseWebpackConfig, {
           stats.compilation.errors.length &&
           process.argv.indexOf('--watch') == -1
         ) {
-          console.log('build error');
           process.exit(1);
         }
       });
@@ -255,7 +254,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // new HardSourceWebpackPlugin()
   ]
 });
-console.log(webpackConfig.devtool);
+
 if (config.build.productionGzip) {
   // gzip配置
   const CompressionWebpackPlugin = require('compression-webpack-plugin');

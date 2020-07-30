@@ -3,12 +3,11 @@
  * @Author: all
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-30 17:19:48
+ * @LastEditTime: 2020-07-30 17:25:18
  */
 
 const path = require('path');
 const environment = require('./environment');
-console.log('environment: ', environment);
 
 module.exports = {
   // 开发环境中的配置
