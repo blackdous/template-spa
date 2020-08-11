@@ -2,11 +2,15 @@
  * @Descripttion: hp-breadcrumb
  * @Author: asyncnode
  * @Date: 2020-05-24 22:21:28
- * @LastEditors: asyncnode
- * @LastEditTime: 2020-05-25 09:11:06
+ * @LastEditors: heidous
+ * @LastEditTime: 2020-08-11 09:30:18
 -->
 <template>
-  <div class="hp-breadcrumb" aria-label="Breadcrumb" role="navigation">
+  <div
+    class="hp-breadcrumb"
+    aria-label="Breadcrumb"
+    role="navigation"
+  >
     <slot />
   </div>
 </template>
@@ -37,9 +41,14 @@ export default {
   },
   mounted() {
     // 获取所有的面包屑子项
-    const items = this.$el.querySelectorAll('.hp-breadcrumb__item');
+    const items = this.$el.querySelectorAll(
+      '.hp-breadcrumb__item'
+    );
     if (items.length) {
-      items[items.length - 1].setAttribute('aria-current', 'page');
+      items[items.length - 1].setAttribute(
+        'aria-current',
+        'page'
+      );
     }
   }
 };

@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-29 09:21:56
+ * @LastEditTime: 2020-08-11 09:29:54
  */
 
 // https://eslint.org/docs/user-guide/configuring
@@ -31,7 +31,10 @@ module.exports = {
   // add your custom rules here
   rules: {
     'max-lines': ['error', 500],
-    'vue/name-property-casing': ['error', 'PascalCase'],
+    'vue/name-property-casing': [
+      'error',
+      'PascalCase'
+    ],
     'vue/max-attributes-per-line': [
       1,
       {
@@ -43,10 +46,24 @@ module.exports = {
         }
       }
     ],
+    // 'max-attributes-per-line': [
+    //   1,
+    //   {
+    //     //多个特性的元素应该分多行撰写，每个特性一行
+    //     singleline: 30,
+    //     multiline: {
+    //       max: 1,
+    //       allowFirstLine: false
+    //     }
+    //   }
+    // ],
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger':
+      process.env.NODE_ENV === 'production'
+        ? 'error'
+        : 'off',
     //
     semi: ['warn', 'always'],
     'space-before-function-paren': 0,
