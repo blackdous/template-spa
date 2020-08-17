@@ -1,27 +1,28 @@
 /*
- * @Descripttion: babel.config.js
+ * @Descripttion:
  * @Author: asyncnode
  * @Date: 2020-04-21 09:16:13
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-24 09:39:43
+ * @LastEditTime: 2020-08-17 11:40:32
  */
-{
+
+module.exports = {
   // 业务代码babel
-  "presets": [
+  presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
-        "modules": false, // 开启terr-shaking
-        "useBuiltIns": "usage",
-        "targets": {
-          "chrome": "58"
+        modules: false,
+        useBuiltIns: 'usage',
+        targets: {
+          chrome: '58'
         },
-        "corejs": 2
+        corejs: 2
       }
     ]
   ],
-  "plugins": [
-    "transform-es2015-modules-commonjs",
+  plugins: [
+    // 'transform-es2015-modules-commonjs',
     // 公用代码库
     // ["@babel/plugin-transform-runtime", {
     // "corejs": 2,
@@ -30,6 +31,6 @@
     // "regenerator": true,
     // "useESModules": false
     // }],
-    "@babel/plugin-syntax-dynamic-import"
+    '@babel/plugin-syntax-dynamic-import'
   ]
-}
+};

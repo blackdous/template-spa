@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-04-23 09:35:18
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-30 16:25:24
+ * @LastEditTime: 2020-08-17 14:03:31
  */
 
 module.exports = {
@@ -13,8 +13,10 @@ module.exports = {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
-    '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.tsx?$': 'ts-jest'
+      {{#tsConfig}}
+      '^.+\\.tsx?$': 'ts-jest',
+      {{/tsConfig}}
+    '^.+\\.jsx?$': 'babel-jest'
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
@@ -35,12 +37,22 @@ module.exports = {
     '!**/node_modules/**',
     '!**/dist/**',
     '!**/(test|tests|examples|config|build|coverage|static)/**',
+    {{#if_eq runner "jest"}}
     '!**/jest.config.js',
+    {{/if_eq}}
+    {{#commitLint}}
     '!**/commitlint.config.js',
+    {{/commitLint}}
+    {{#eslint}}
     '!**/babel.config.js',
+    {{/eslint}}
     '!**/src/main.js',
+    {{#pwa}}
     '!**/src/registerServiceWorker.js',
+    {{/pwa}}
+    {{#tsConfig}}
     '!**/src/currency.ts',
+    {{/tsConfig}}
     '!**/src/App.vue',
     '!**/postcss.config.js'
   ],

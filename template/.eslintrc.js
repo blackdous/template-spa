@@ -1,9 +1,9 @@
 /*
- * @Descripttion:
+ * @Descripttion: eslint.config.js
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-11 09:29:54
+ * @LastEditTime: 2020-08-16 19:39:06
  */
 
 // https://eslint.org/docs/user-guide/configuring
@@ -19,6 +19,7 @@ module.exports = {
   env: {
     browser: true
   },
+  {{#if_eq eslintConfig "standard"}}
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
@@ -26,37 +27,33 @@ module.exports = {
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
+  {{/if_eq}}
+  {{#if_eq eslintConfig "airbnb"}}
+  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+  extends: ['plugin:vue/essential', 'airbnb-base'],
+  {{/if_eq}}
+  {{#if_eq eslintConfig "none"}}
+  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+  extends: ['plugin:vue/essential'],
+  {{/if_eq}}
   // required to lint *.vue files
   plugins: ['vue'],
   // add your custom rules here
   rules: {
-    'max-lines': ['error', 500],
-    'vue/name-property-casing': [
-      'error',
-      'PascalCase'
-    ],
+    {{#if_eq eslintConfig "standard"}}
     'vue/max-attributes-per-line': [
       1,
       {
         //多个特性的元素应该分多行撰写，每个特性一行
-        singleline: 20,
+        singleline: 10,
         multiline: {
           max: 1,
           allowFirstLine: false
         }
       }
     ],
-    // 'max-attributes-per-line': [
-    //   1,
-    //   {
-    //     //多个特性的元素应该分多行撰写，每个特性一行
-    //     singleline: 30,
-    //     multiline: {
-    //       max: 1,
-    //       allowFirstLine: false
-    //     }
-    //   }
-    // ],
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
@@ -65,7 +62,7 @@ module.exports = {
         ? 'error'
         : 'off',
     //
-    semi: ['warn', 'always'],
+    semi: ['error', 'always'],
     'space-before-function-paren': 0,
     camelcase: 0,
     // allow debugger during development
@@ -98,10 +95,32 @@ module.exports = {
     'no-new-wrappers': 2, //不允许使用new String，Number和Boolean对象
     'no-with': 2, //不允许使用with语句
     'no-irregular-whitespace': 2, //不允许出现不规则的空格
-    eqeqeq: ['error', 'smart'], //比较的时候使用严格等于
+    'eqeqeq': ['error', 'smart'], //比较的时候使用严格等于
     'no-eq-null': 2, //不允许对null用==或者!=
     'no-tabs': 'off', // allow paren-less arrow functions
     'arrow-parens': 0,
-    'eol-last': 0
+    'eol-last': 0,
+    {{/if_eq}}
+    {{#if_eq eslintConfig "airbnb"}}
+    // don't require .vue extension when importing
+    'import/extensions': ['error', 'always', {
+      js: 'never',
+      vue: 'never'
+    }],
+    // disallow reassignment of function parameters
+    // disallow parameter object manipulation except for specific exclusions
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state', // for vuex state
+        'acc', // for reduce accumulators
+        'e' // for e.returnvalue
+      ]
+    }],
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      optionalDependencies: ['test/unit/index.js']
+    }],
+    {{/if_eq}}
   }
 };

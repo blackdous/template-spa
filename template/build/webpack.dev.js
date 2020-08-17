@@ -3,7 +3,7 @@
  * @Author: all
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-07-28 14:08:48
+ * @LastEditTime: 2020-08-17 14:20:01
  */
 
 // node内置path 模块
@@ -44,6 +44,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             }
           }
         ]
+        {{#eslint}}
       },
       {
         test: /\.(js|vue)$/,
@@ -53,6 +54,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           formatter: require('eslint-friendly-formatter'),
           emitWarning: true
         }
+        {{/eslint}}
       }
     ].concat(
       cssLoader.styleLoaders({
