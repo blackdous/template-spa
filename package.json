@@ -1,11 +1,11 @@
 {
   "name": "vuetemplate-cli-template-spa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "eslint typescript unit jest somke hot-reload",
   "author": "blackdous",
   "license": "MIT",
   "scripts": {
-    "release": "npm run build && npm run smoke && standard-version"
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
