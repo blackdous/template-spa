@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-08-13 22:48:07
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-18 11:23:50
+ * @LastEditTime: 2020-08-18 11:28:42
  */
 const path = require('path');
 const fs = require('fs');
@@ -13,7 +13,7 @@ const {
   installDependencies,
   runLintFix,
   printMessage
-} = require('./package.json');
+} = require('./utils');
 
 const pkg = require('./package.json');
 const { addTestAnswers } = require('./scenarios');
