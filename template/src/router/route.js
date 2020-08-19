@@ -3,12 +3,14 @@
  * @Author: heidous
  * @Date: 2020-07-24 14:51:09
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 11:39:39
+ * @LastEditTime: 2020-08-19 14:09:09
  */
 export const routesModules = require.context('./modules', true, /\.js$/);
-let home = () => import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home')
+{{!#tsConfig}}
+const home = () => import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home');
+{{/tsConfig}}
 {{#tsConfig}}
-home  = () => import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home-ts')
+const home  = () => import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home-ts');
 {{/tsConfig}}
 const routesConstant = [
   {

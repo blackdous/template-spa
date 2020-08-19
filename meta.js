@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-08-13 22:48:07
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 11:55:12
+ * @LastEditTime: 2020-08-19 11:56:34
  */
 const path = require('path');
 const fs = require('fs');
@@ -146,6 +146,7 @@ module.exports = {
   filters: {
     'tsconfig.json': 'tsConfig',
     'src/pages/home-ts.vue': 'tsConfig',
+    'src/pages/home.vue': '!tsConfig',
     'tslint.json': 'tslintConfig',
     'src/registerServiceWorker.js': 'pwa',
     'commitlint.config.js': 'commitLint',
