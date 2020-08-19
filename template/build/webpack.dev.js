@@ -3,7 +3,7 @@
  * @Author: all
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-17 14:20:01
+ * @LastEditTime: 2020-08-19 14:35:42
  */
 
 // node内置path 模块
@@ -90,8 +90,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    new webpack.NoEmitOnErrorsPlugin(),
-    new FriendlyErrorsPlugin({})
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 });
 // module.exports = devWebpackConfig;
