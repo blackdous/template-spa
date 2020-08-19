@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-07-23 23:54:09
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 10:49:24
+ * @LastEditTime: 2020-08-19 14:27:25
 -->
 <template>
   <div class="home">
@@ -20,7 +20,7 @@
     >
   </div>
 </template>
-{{#tsConfig}}
+{{#if tsConfig}}
 <script lang="ts">
 import {
   Component,
@@ -34,4 +34,14 @@ import HelloWorld from '@com/typescript/HelloWorld'; // @com is an alias to /com
 })
 export default class Home extends Vue {}
 </script>
-{{/tsConfig}}
+{{/if}}
+{{#unless tsConfig}}
+<script>
+import HelloWorld from '@com/HelloWorld';
+export default {
+  components: {
+    HelloWorld
+  }
+}
+</script>
+{{/unless}}

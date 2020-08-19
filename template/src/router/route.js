@@ -3,15 +3,9 @@
  * @Author: heidous
  * @Date: 2020-07-24 14:51:09
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 14:09:09
+ * @LastEditTime: 2020-07-29 10:41:34
  */
 export const routesModules = require.context('./modules', true, /\.js$/);
-{{!#tsConfig}}
-const home = () => import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home');
-{{/tsConfig}}
-{{#tsConfig}}
-const home  = () => import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home-ts');
-{{/tsConfig}}
 const routesConstant = [
   {
     name: 'Home',
@@ -20,7 +14,8 @@ const routesConstant = [
       title: '首页',
       icon: ''
     },
-    component: home
+    component: () =>
+      import(/* WebpackPreLoad: true, webpackChunkName: "user" */ '@/pages/home')
   }
 ];
 let routes = [];
