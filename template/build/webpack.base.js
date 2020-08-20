@@ -20,7 +20,6 @@ const tsloader = require('./loaders/tsloader');
 {{#tslintConfig}}
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 {{/tslintConfig}}
-// console.log('tsloader: ', tsloader);
 
 threadLoader.warmup(
   {

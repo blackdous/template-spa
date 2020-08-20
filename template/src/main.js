@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-17 14:59:14
+ * @LastEditTime: 2020-08-20 16:13:33
  */
 
 // import '@babel/polyfill';
@@ -24,8 +24,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { testTypescript } from './currency';
 {{/tsConfig}}
 import { addFunc } from './utils';
-// import './asstes/scss/index.scss';
-import './theme/index.scss';
 {{#vuex}}
 const VuexStoreRegister = require('./plugins/vuexLazy');
 // Vue.filter('currency', currencyFilter);
