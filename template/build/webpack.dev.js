@@ -3,7 +3,7 @@
  * @Author: all
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 14:35:42
+ * @LastEditTime: 2020-08-20 16:37:59
  */
 
 // node内置path 模块
@@ -93,7 +93,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin()
   ]
 });
-// module.exports = devWebpackConfig;
 // 如果端口占用自动找寻端口
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port;
