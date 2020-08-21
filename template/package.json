@@ -7,9 +7,9 @@
     {{#if_eq runner "jest"}}
     "test": "jest",
     {{/if_eq}}
-    {{#somke}}
+    {{#smoke}}
     "smoke": "jest --collectCoverage=false ./tests/smoke/*.spec.js",
-    {{/somke}}
+    {{/smoke}}
     {{/unit}}
     {{#commitLint}}
     "release": "npm run build && npm run smoke && standard-version",
@@ -78,7 +78,7 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "echo 提交代码前需要先进行单元测试 && npm run test"
+      "pre-push": "echo 提交代码前需要先进行单元测试 && npm run build && npm run test"
     }
   },
   "lint-staged": {

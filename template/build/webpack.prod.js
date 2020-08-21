@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-20 16:37:49
+ * @LastEditTime: 2020-08-21 16:13:06
  * @note: happypack/thread-loader 只用一个就可以 && TerserPlugin/HardSourceWebpackPlugin 同样
  */
 
@@ -69,10 +69,6 @@ const webpackConfig = merge(baseWebpackConfig, {
               cacheDirectory: true
             }
           }
-          {{#eslint}}
-          ,
-          'eslint-loader'
-          {{/eslint}}
         ]
       }
     ]
@@ -241,7 +237,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       sourcemap: config.environment.debug
     }),
     {{/pwa}}
-    new FriendlyErrorsPlugin(),
+    // new FriendlyErrorsPlugin(),
     function() {
       this.hooks.done.tap('done', (stats) => {
         if (

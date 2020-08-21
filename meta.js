@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-08-13 22:48:07
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 15:49:53
+ * @LastEditTime: 2020-08-21 10:39:31
  */
 const path = require('path');
 const fs = require('fs');
@@ -130,7 +130,7 @@ module.exports = {
     smoke: {
       when: 'isNotTest && unit',
       type: 'confirm',
-      message: 'Set up somke unit'
+      message: 'Set up smoke unit'
     },
     commitLint: {
       when: 'isNotTest',
@@ -153,7 +153,7 @@ module.exports = {
     'tests/unit/**/*': 'unit',
     'tests/unit/typescript/**/*': 'unit && tsConfig',
     'jest.config.js': "unit && runner === 'jest'",
-    'tests/unit/somke/**/*': "unit && runner === 'jest' && smoke",
+    'tests/unit/smoke/**/*': "unit && runner === 'jest' && smoke",
     '.eslintrc.js': 'eslint',
     '.eslintignore': 'eslint',
     'src/router/**/*': 'router',

@@ -17,9 +17,6 @@ const utils = require('./utils');
 const webpack = require('webpack');
 // 获取cssloader
 const tsloader = require('./loaders/tsloader');
-{{#tslintConfig}}
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-{{/tslintConfig}}
 
 threadLoader.warmup(
   {
@@ -169,14 +166,6 @@ module.exports = {
     ]),
     new webpack.optimize.ModuleConcatenationPlugin(),
     // make sure to include the plugin for the magic
-    {{#tslintConfig}}
-    // 配合vue-loader使用
-    new ForkTsCheckerWebpackPlugin({
-      eslint: {
-        files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
-      }
-    }),
-    {{/tslintConfig}}
     // html 插件
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),

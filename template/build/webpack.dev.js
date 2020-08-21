@@ -3,7 +3,7 @@
  * @Author: all
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-20 16:37:59
+ * @LastEditTime: 2020-08-21 16:09:06
  */
 
 // node内置path 模块
@@ -23,6 +23,9 @@ const config = require('../config');
 // 获取cssloader
 const cssLoader = require('./loaders/cssLoader');
 const packageConfig = require('../package.json')
+{{#tslintConfig}}
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+{{/tslintConfig}}
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT && Number(process.env.PORT);
@@ -90,7 +93,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    {{#tslintConfig}}
+    // 配合vue-loader使用
+    new ForkTsCheckerWebpackPlugin({
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}' // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
+      }
+    }),
+    {{/tslintConfig}}
   ]
 });
 // 如果端口占用自动找寻端口
