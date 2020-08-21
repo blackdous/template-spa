@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-07-23 23:48:12
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-20 16:13:01
+ * @LastEditTime: 2020-08-21 16:53:56
  */
 interface Person {
   name: string;
@@ -26,4 +26,3 @@ export const testTypescript = function() {
 export const testJest = function(firstName: string, lastName: string) {
   return 'firstName:' + firstName + 'lastName:' + lastName;
 };
-

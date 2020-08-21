@@ -3,7 +3,7 @@
  * @Author: asyncnode
  * @Date: 2020-03-23 12:08:30
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-20 16:15:02
+ * @LastEditTime: 2020-08-21 16:37:50
  */
 
 import Vue from 'vue';
@@ -21,6 +21,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { testTypescript } from './currency';
 {{/tsConfig}}
 import { addFunc } from './utils';
+import './asstes/scss/index.scss';
 {{#vuex}}
 const VuexStoreRegister = require('./plugins/vuexLazy');
 Vue.use(VuexStoreRegister);
