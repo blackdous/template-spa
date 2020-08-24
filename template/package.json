@@ -12,7 +12,7 @@
     {{/smoke}}
     {{/unit}}
     {{#commitLint}}
-    "release": "npm run build && npm run smoke && standard-version",
+    "release": "npm run test && standard-version",
     {{/commitLint}}
     {{#eslint}}
     "lint": "eslint --cache --ext .js --ext .vue src",
