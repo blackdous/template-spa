@@ -3,9 +3,10 @@
  * @Author: heidous
  * @Date: 2020-07-29 11:20:14
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-20 15:51:19
+ * @LastEditTime: 2020-08-24 11:51:01
  */
-const environmentStr = process.env.ENVIRONMENT;
+const argv = require('yargs').argv;
+const environmentStr = argv.ENVIRONMENT || process.env.ENVIRONMENT;
 let environment = {};
 switch (environmentStr) {
   case 'sit':

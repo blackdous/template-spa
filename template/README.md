@@ -4,7 +4,21 @@ webpack-sap-vue
 
 feature-list:
 
-// !! babel-core 为了 兼容 jest can't find babel-core
+- mock 功能❌
+- 定制自己的 loader、plugin❌
+- 错误捕获❌
+
+hashList:
+
+- npm run dev || yarn dev 启动多页面
+- npm run build || yarn build 正式环境打包
+- npm run build -- --ENVIRONMENT=sit || npm run build -- --ENVIRONMENT=uat || npm run build -- --ENVIRONMENT=pre 打不同环境的包
+- npm run analyzeranalyzer 用于分析打包时间 + 打包体积大小
+
+USE:
+
+- npm i vuetemplates-cli -g ✅
+- vuetemplates init template-spa projectName ✅
 
 TODOLIST:
 
@@ -16,7 +30,6 @@ TODOLIST:
 - babel 7.x、webpack 4.x ✅
 - 支持 sass、less、stylus、postcss ✅
 - eslint、husky、pre-commit 代码检测 ✅
-- mock 功能 ❌
 - router 规划 ✅
 - vuex 基础封装 ✅
 - smoke 冒烟测试 ✅
@@ -26,6 +39,6 @@ TODOLIST:
 - 优化打包速度 terserPulgin/hardsourcewebpackpulgin、cache-lodaer、thread-lodaer/happypack 等等优化 ✅
 - 添加 Etag、Gzip、serverworker ✅
 - 部署为 npm 包，支持命令行交互 完成 vue-template-cli ✅
-  - npm i vue-template-cli -g ✅
-  - vuetemplate init templateName projectName ✅
-- 定制自己的 loader、plugin❌，如懒加载 vuex state 中的数据 ✅、router 动态注册 ✅
+  - npm i vuetemplates-cli -g ✅
+  - vuetemplates init template-spa projectName ✅
+- 如懒加载 vuex state 中的数据 ✅、router 动态注册 ✅
