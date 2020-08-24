@@ -3,7 +3,7 @@
  * @Author: heidous
  * @Date: 2020-08-13 22:48:07
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-21 10:39:31
+ * @LastEditTime: 2020-08-24 16:23:43
  */
 const path = require('path');
 const fs = require('fs');
@@ -147,7 +147,7 @@ module.exports = {
     'tsconfig.json': 'tsConfig',
     'src/components/typescript/**/*': 'tsConfig',
     'src/components/HelloWorld.vue': '!tsConfig',
-    'tslint.json': 'tslintConfig',
+    'tslint.json': 'tsConfig && tslintConfig',
     'src/registerServiceWorker.js': 'pwa',
     'commitlint.config.js': 'commitLint',
     'tests/unit/**/*': 'unit',
