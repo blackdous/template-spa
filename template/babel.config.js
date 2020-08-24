@@ -1,11 +1,3 @@
-/*
- * @Descripttion:
- * @Author: asyncnode
- * @Date: 2020-04-21 09:16:13
- * @LastEditors: heidous
- * @LastEditTime: 2020-08-24 14:18:11
- */
-
 module.exports = {
   // 业务代码babel
   presets: [

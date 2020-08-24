@@ -1,10 +1,3 @@
-/*
- * @Descripttion: test currency
- * @Author: heidous
- * @Date: 2020-07-23 23:48:12
- * @LastEditors: heidous
- * @LastEditTime: 2020-08-21 16:53:56
- */
 interface Person {
   name: string;
   age: number;

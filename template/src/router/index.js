@@ -1,10 +1,3 @@
-/*
- * @Descripttion: init Vue-router
- * @Author: heidous
- * @Date: 2020-07-24 14:46:43
- * @LastEditors: heidous
- * @LastEditTime: 2020-07-29 11:05:10
- */
 import Vue from 'vue';
 import Router from 'vue-router';
 import routes from './route';

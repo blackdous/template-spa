@@ -1,11 +1,3 @@
-/*
- * @Descripttion: store懒加载方式
- * @Author: heidous
- * @Date: 2020-07-28 14:18:01
- * @LastEditors: heidous
- * @LastEditTime: 2020-07-29 10:11:08
- */
-
 const VuexStoreRegister = {
   install: function(vue) {
     vue.mixin({
@@ -23,7 +15,6 @@ const VuexStoreRegister = {
             : '';
           var modules = $_modules || $_name;
           const { modulesList } = this.$store.state;
-          console.log('modulesList: ', modulesList[modules], modules);
           if (Object.prototype.toString.call(modules) === '[object Array]') {
             modules.forEach((moduleName) => {
               // eslint-disable-next-line no-unused-expressions

@@ -78,11 +78,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,scss}": [
+    "*.{js,vue}": [
       {{#eslint}}
-      "npm run lint",
+      "npm run lint"
       {{/eslint}}
-      "git add"
     ]
   },
   "config": {

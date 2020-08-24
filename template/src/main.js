@@ -1,11 +1,3 @@
-/*
- * @Descripttion:
- * @Author: asyncnode
- * @Date: 2020-03-23 12:08:30
- * @LastEditors: heidous
- * @LastEditTime: 2020-08-21 16:37:50
- */
-
 import Vue from 'vue';
 {{#vuex}}
 import store from '@/store';

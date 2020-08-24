@@ -1,11 +1,3 @@
-/*
- * @Descripttion: jest config
- * @Author: asyncnode
- * @Date: 2020-04-23 09:35:18
- * @LastEditors: heidous
- * @LastEditTime: 2020-08-17 14:03:31
- */
-
 module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'vue'],
   // rootDir: path.resolve(__dirname),

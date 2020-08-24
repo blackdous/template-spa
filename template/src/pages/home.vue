@@ -1,10 +1,3 @@
-<!--
- * @Descripttion: Home.vue
- * @Author: heidous
- * @Date: 2020-07-23 23:54:09
- * @LastEditors: heidous
- * @LastEditTime: 2020-08-19 14:36:10
--->
 <template>
   <div class="home">
     <HelloWorld
