@@ -6,7 +6,7 @@
     "test": "npm run build && jest",
     "smoke": "npm run build && jest --collectCoverage=false ./tests/smoke/*.spec.js",
     "release": "npm run build && npm run smoke && standard-version",
-    "lint": "eslint --fix --ext .js --ext .vue src",
+    "lint": "eslint --ext .js --ext .vue src",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js",
     "start": "cross-env npm run build && cross-env node build/webpack.start.js",
     "build": "cross-env NODE_ENV=production ENVIRONMENT=prod webpack --config ./build/webpack.prod.js",
@@ -64,8 +64,7 @@
   },
   "lint-staged": {
     "*.{js,vue}": [
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   },
   "config": {
