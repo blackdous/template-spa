@@ -62,7 +62,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {{#tsConfig}}
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
@@ -92,7 +91,6 @@ module.exports = {
               }
             ]
       },
-      {{/tsConfig}}
       // vue-loader
       {
         test: /\.vue$/,

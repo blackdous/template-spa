@@ -3,13 +3,14 @@
  * @Author: heidous
  * @Date: 2020-07-29 11:20:14
  * @LastEditors: heidous
- * @LastEditTime: 2020-08-24 11:51:01
+ * @LastEditTime: 2020-08-24 14:59:44
  */
 const argv = require('yargs').argv;
 const environmentStr = argv.ENVIRONMENT || process.env.ENVIRONMENT;
 let environment = {};
 switch (environmentStr) {
   case 'sit':
+    console.log('sit');
     environment = {
       fetchUrl: 'http://www.google.com/sit',
       debug: true

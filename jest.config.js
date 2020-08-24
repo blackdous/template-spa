@@ -13,9 +13,7 @@ module.exports = {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
-      {{#tsConfig}}
-      '^.+\\.tsx?$': 'ts-jest',
-      {{/tsConfig}}
+    '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest'
   },
   moduleNameMapper: {
@@ -37,22 +35,12 @@ module.exports = {
     '!**/node_modules/**',
     '!**/dist/**',
     '!**/(test|tests|examples|config|build|coverage|static)/**',
-    {{#if_eq runner "jest"}}
     '!**/jest.config.js',
-    {{/if_eq}}
-    {{#commitLint}}
     '!**/commitlint.config.js',
-    {{/commitLint}}
-    {{#eslint}}
     '!**/babel.config.js',
-    {{/eslint}}
     '!**/src/main.js',
-    {{#pwa}}
     '!**/src/registerServiceWorker.js',
-    {{/pwa}}
-    {{#tsConfig}}
     '!**/src/currency.ts',
-    {{/tsConfig}}
     '!**/src/App.vue',
     '!**/postcss.config.js'
   ],

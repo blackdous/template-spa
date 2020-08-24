@@ -24,10 +24,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base');
 // 全局配置
 const config = require('../config');
-{{#pwa}}
 // PWA
 const WorkboxPlugin = require('workbox-webpack-plugin');
-{{/pwa}}
 // 获取cssloader
 const cssLoader = require('./loaders/cssLoader');
 
@@ -227,7 +225,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`, { nodir: true })
       // content: [`./public/**/*.html`, `./src/**/*.vue`],
     }),
-    {{#pwa}}
     // https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW
     new WorkboxPlugin.GenerateSW({
       // swDest: 'sw.js',
@@ -236,7 +233,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       skipWaiting: true,
       sourcemap: config.environment.debug
     }),
-    {{/pwa}}
     // new FriendlyErrorsPlugin(),
     function() {
       this.hooks.done.tap('done', (stats) => {

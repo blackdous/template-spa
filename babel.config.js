@@ -22,9 +22,7 @@ module.exports = {
     ]
   ],
   plugins: [
-    {{#tsConfig}}
     'transform-es2015-modules-commonjs',
-    {{/tsConfig}}
     // 公用代码库
     // ["@babel/plugin-transform-runtime", {
     // "corejs": 2,
